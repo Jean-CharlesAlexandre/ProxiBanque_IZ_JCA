@@ -1,21 +1,44 @@
-package model;
+package model.entity;
 
-import model.entity.CB;
-import model.entity.CompteCourant;
-import model.entity.CompteEpargne;
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 /**
  * Classe Client caractérisée par un id, un nom, une adresse, un code postal,
  * une ville, un téléphone. Il possède obligatiorement un compte courant et peut
  * possèder un compte épargne et une carte bancaire.
  * 
- * @author Jean-Charles & Jérémi
+ * @author Jean-Charles & Ihab
  *
  */
+
+@Entity
 public class Client {
 
 //	Attributs
+	@Id
+	@GeneratedValue (strategy = GenerationType.AUTO)
 	private int id;
+	
+	@OneToMany(mappedBy = "client", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+	private Set<Compte> setCompte = new HashSet<Compte>();
+	
+	@OneToMany(mappedBy = "client", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+	private Set<CB> setCB = new HashSet<CB>();
+	
+	@ManyToOne
+	@JoinColumn(name="conseiller_id")
+	private Conseiller conseiller;
+		
 	private String nom;
 	private String adresse;
 	private int codePostal;
@@ -33,6 +56,10 @@ public class Client {
 		this.codePostal = codePostal;
 		this.ville = ville;
 		this.telephone = telephone;
+	}
+	
+	public Client() {
+		super();
 	}
 
 //	Getters et setters

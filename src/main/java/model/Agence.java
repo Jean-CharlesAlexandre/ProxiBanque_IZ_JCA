@@ -8,7 +8,7 @@ import model.entity.Conseiller;
  * Classe Agence caractérisée par un id et une date de création et composée d'un
  * seul gérant et de plusieurs conseillers.
  * 
- * @author Jean-Charles & Jérémi
+ * @author Jean-Charles & Ihab
  *
  */
 public class Agence {

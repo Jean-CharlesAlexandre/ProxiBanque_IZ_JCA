@@ -3,7 +3,7 @@ package service;
 import java.util.List;
 
 import model.Agence;
-import model.Client;
+import model.entity.Client;
 import model.entity.Employe;
 
 /**
@@ -15,7 +15,7 @@ import model.entity.Employe;
  * méthode relative à l'audit d'une agence est également comprise dans cette
  * interface.
  * 
- * @author Jean-Charles & Jérémi
+ * @author Jean-Charles & Ihab
  *
  */
 public interface EmployeService {

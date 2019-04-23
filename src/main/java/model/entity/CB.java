@@ -1,16 +1,28 @@
 package model.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
 /**
  * Classe CB caractérisée par un numéro de carte, un plafond de retrait et du
  * type de carte.
  * 
- * @author Jean-Charles & Jérémi
+ * @author Jean-Charles & Ihab
  *
  */
+@Entity
 public class CB {
 
 	// Attributs
+	@Id
 	private long numeroCarte;
+	
+	@ManyToOne
+	@JoinColumn(name="client_id")
+	private Client client;
+	
 	private int PLAFONDRETRAIT = 300;
 	private String typeCarte;
 
@@ -18,6 +30,11 @@ public class CB {
 	public CB(String typeCarte) {
 		this.typeCarte = typeCarte;
 	}
+	
+	public CB() {
+		super();
+	}
+
 
 	// Getters et setters
 	public long getNumeroCarte() {

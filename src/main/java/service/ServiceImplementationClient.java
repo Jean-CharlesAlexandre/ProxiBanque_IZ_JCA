@@ -2,8 +2,8 @@ package service;
 
 import java.util.List;
 
-import model.Client;
 import model.entity.CB;
+import model.entity.Client;
 import model.entity.CompteCourant;
 import model.entity.CompteEpargne;
 import persistance.ClientDAO;
@@ -14,7 +14,7 @@ import persistance.ClientMemoireDAO;
  * Elle est composée des règles métiers pour le client et joue le rôle
  * d'intermédiaire entre l'utilisateur et la base de données des clients.
  * 
- * @author Jean-Charles & Jérémi
+ * @author Jean-Charles & Ihab
  *
  */
 public class ServiceImplementationClient implements ClientService {

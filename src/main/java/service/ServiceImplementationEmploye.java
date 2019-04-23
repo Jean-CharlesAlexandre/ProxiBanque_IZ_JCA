@@ -3,7 +3,7 @@ package service;
 import java.util.List;
 
 import model.Agence;
-import model.Client;
+import model.entity.Client;
 import model.entity.Conseiller;
 import model.entity.Employe;
 import model.entity.Entreprise;
@@ -19,7 +19,7 @@ import persistance.EmployeMemoireDAO;
  * réaliser des virements de compte à compte ainsi que pour réaliser un audit
  * sur une agence.
  * 
- * @author Jean-Charles & Jérémi
+ * @author Jean-Charles & Ihab
  *
  */
 public class ServiceImplementationEmploye implements EmployeService {

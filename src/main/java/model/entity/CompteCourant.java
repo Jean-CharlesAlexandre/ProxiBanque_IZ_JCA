@@ -1,14 +1,16 @@
 package model.entity;
 
-import model.Compte;
+import javax.persistence.Entity;
 
 /**
  * Classe CompteCourant caractérisée par une autorisation de découvert et qui
  * hérite de la classe Compte.
  * 
- * @author Jean-Charles & Jérémi
+ * @author Jean-Charles & Ihab
  *
  */
+
+@Entity
 public class CompteCourant extends Compte {
 
 //	Attribut
@@ -19,7 +21,11 @@ public class CompteCourant extends Compte {
 		super(solde, dateOuverture);
 	}
 
-//	Getter et setter
+	public CompteCourant() {
+		super();
+	}
+
+	//	Getter et setter
 	public int getAUTORISATIONDECOUVERT() {
 		return AUTORISATIONDECOUVERT;
 	}

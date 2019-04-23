@@ -1,14 +1,16 @@
 package model.entity;
 
-import model.Client;
+import javax.persistence.Entity;
 
 /**
  * Classe Particulier caractérisée par un prénom et qui hérite de la classe
  * Client.
  * 
- * @author Jean-Charles & Jérémi
+ * @author Jean-Charles & Ihab
  *
  */
+
+@Entity
 public class Particulier extends Client {
 
 //	Attribut
@@ -19,8 +21,13 @@ public class Particulier extends Client {
 		super(nom, adresse, codePostal, ville, telephone);
 		this.prenom = prenom;
 	}
+	
 
-//	Getter et setter
+	public Particulier() {
+		super();
+	}
+
+	//	Getter et setter
 	public String getPrenom() {
 		return prenom;
 	}

@@ -1,16 +1,29 @@
-package model;
+package model.entity;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 /**
  * Classe Compte caractérisée par un numéro de compte, un solde et une date
  * d'ouverture.
  * 
- * @author Jean-Charles & Jérémi
+ * @author Jean-Charles & Ihab
  *
  */
+
+@Entity
 public class Compte {
 
 	// Attributs
+	@Id
 	private long numeroCompte;
+	
+	@ManyToOne
+	@JoinColumn(name="client_id")
+	private Client client;
+	
 	private double solde;
 	private String dateOuverture;
 
@@ -18,6 +31,9 @@ public class Compte {
 	public Compte(double solde, String dateOuverture) {
 		setSolde(solde);
 		this.dateOuverture = dateOuverture;
+	}
+	public Compte() {
+		super();
 	}
 
 	// Getters et setters

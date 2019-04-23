@@ -2,8 +2,8 @@ package service;
 
 import java.util.List;
 
-import model.Client;
 import model.entity.CB;
+import model.entity.Client;
 import model.entity.CompteCourant;
 import model.entity.CompteEpargne;
 
@@ -12,7 +12,7 @@ import model.entity.CompteEpargne;
  * joue le rôle d'intermédiaire entre l'utilisateur et la base de données des
  * clients.
  * 
- * @author Jean-Charles & Jérémi
+ * @author Jean-Charles & Ihab
  *
  */
 public interface ClientService {

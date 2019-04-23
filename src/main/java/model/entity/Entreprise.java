@@ -1,14 +1,16 @@
 package model.entity;
 
-import model.Client;
+import javax.persistence.Entity;
 
 /**
  * Classe Entreprise caractérisée par numéro SIRET et qui hérite de la classe
  * Client.
  * 
- * @author Jean-Charles & Jérémi
+ * @author Jean-Charles & Ihab
  *
  */
+
+@Entity
 public class Entreprise extends Client {
 
 //	Attribut
@@ -20,7 +22,12 @@ public class Entreprise extends Client {
 		this.numeroSIRET = numeroSIRET;
 	}
 
-//	Getter et setter
+	public Entreprise() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	//	Getter et setter
 	public long getNumeroSIRET() {
 		return numeroSIRET;
 	}

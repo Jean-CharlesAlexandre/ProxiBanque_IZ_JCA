@@ -1,14 +1,16 @@
 package model.entity;
 
-import model.Compte;
+import javax.persistence.Entity;
 
 /**
  * Classe CompteEpargne caractérisée par un taux de rémunération qui hérite de
  * la classe Compte.
  * 
- * @author Jean-Charles & Jérémi
+ * @author Jean-Charles & Ihab
  *
  */
+
+@Entity
 public class CompteEpargne extends Compte {
 
 //	Attribut
@@ -19,7 +21,11 @@ public class CompteEpargne extends Compte {
 		super(solde, dateOuverture);
 	}
 
-//	Getter et setter
+	public CompteEpargne() {
+		super();
+	}
+
+	//	Getter et setter
 	public int getTAUXREMUNERATION() {
 		return TAUXREMUNERATION;
 	}

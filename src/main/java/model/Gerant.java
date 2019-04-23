@@ -5,7 +5,7 @@ import model.entity.Employe;
 /**
  * Classe Gerant et qui hérite de la classe Employe.
  * 
- * @author Jean-Charles & Jérémi
+ * @author Jean-Charles & Ihab
  *
  */
 public class Gerant extends Employe {

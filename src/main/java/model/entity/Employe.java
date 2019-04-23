@@ -1,15 +1,25 @@
 package model.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  * Classe Employe caractérisée par un id, un nom et un prénom.
  * 
- * @author Jean-Charles & Jérémi
+ * @author Jean-Charles & Ihab
  *
  */
+
+@Entity
 public class Employe {
 
 //	Attribut
+	@Id
+	@GeneratedValue (strategy = GenerationType.AUTO)
 	private int id;
+
 	private String nom;
 	private String prenom;
 
@@ -17,6 +27,9 @@ public class Employe {
 	public Employe(String nom, String prenom) {
 		this.nom = nom;
 		this.prenom = prenom;
+	}
+	public Employe() {
+		super();
 	}
 
 //	Getter et setter

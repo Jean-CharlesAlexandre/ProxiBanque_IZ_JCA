@@ -4,7 +4,7 @@ import java.util.List;
 
 import model.Agence;
 import model.Client;
-import model.Employe;
+import model.entity.Employe;
 
 /**
  * Interface EmployeService est composée des règles métiers pour l'employé et

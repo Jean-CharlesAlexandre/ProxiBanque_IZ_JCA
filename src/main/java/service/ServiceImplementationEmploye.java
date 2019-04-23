@@ -4,10 +4,10 @@ import java.util.List;
 
 import model.Agence;
 import model.Client;
-import model.Conseiller;
-import model.Employe;
-import model.Entreprise;
-import model.Particulier;
+import model.entity.Conseiller;
+import model.entity.Employe;
+import model.entity.Entreprise;
+import model.entity.Particulier;
 import persistance.EmployeDAO;
 import persistance.EmployeMemoireDAO;
 

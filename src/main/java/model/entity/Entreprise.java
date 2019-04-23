@@ -1,6 +1,8 @@
 package model.entity;
 
+
 import javax.persistence.Entity;
+
 
 /**
  * Classe Entreprise caractérisée par numéro SIRET et qui hérite de la classe

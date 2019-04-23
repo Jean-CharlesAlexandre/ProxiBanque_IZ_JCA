@@ -2,12 +2,17 @@ package service;
 
 import java.util.List;
 
+
 import model.entity.CB;
 import model.entity.Client;
 import model.entity.CompteCourant;
 import model.entity.CompteEpargne;
 import persistance.ClientDAO;
 import persistance.ClientMemoireDAO;
+
+import model.entity.Client;
+import persistance.DAOClient;
+
 
 /**
  * Classe ServiceImplementationClient qui implémente l'interface ClientService.
@@ -19,8 +24,6 @@ import persistance.ClientMemoireDAO;
  */
 public class ServiceImplementationClient implements ClientService {
 
-	private ClientDAO daoClient = new ClientMemoireDAO();
-
 	/**
 	 * Méthode appelant la sauvegarde d'un client dans la base de données clients.
 	 * Les numéros de compte (courant, épargne) et le numéro de carte bancaire sont
@@ -31,7 +34,7 @@ public class ServiceImplementationClient implements ClientService {
 	public void ajouterClient(Client c) {
 		if (c != null) {
 			// Sauvegarde le client dans DAO
-			daoClient.sauvegarderClient(c);
+			DAOClient.sauvegarderClient(c);
 			// Genere le numero de compte courant du client
 			if (c.getCompteCourant() != null) {
 				c.getCompteCourant().setNumeroCompte(genereNumeroCompte());
@@ -55,7 +58,7 @@ public class ServiceImplementationClient implements ClientService {
 	 * @param int id
 	 */
 	public Client trouverClientValide(int id) {
-		return daoClient.afficherClientParId(id);
+		return DAOClient.afficherClientParId(id);
 	}
 
 	/**
@@ -64,7 +67,7 @@ public class ServiceImplementationClient implements ClientService {
 	 * 
 	 */
 	public List<Client> trouverToutClient() {
-		return daoClient.afficherTout();
+		return DAOClient.afficherTout();
 	}
 
 	/**
@@ -74,7 +77,7 @@ public class ServiceImplementationClient implements ClientService {
 	 * @param int id, String adresse
 	 */
 	public void modifierAdresseClient(int id, String adresse) {
-		daoClient.modifierAdresseClientParId(id, adresse);
+		DAOClient.modifierAdresseClientParId(id, adresse);
 	}
 
 	/**
@@ -84,7 +87,7 @@ public class ServiceImplementationClient implements ClientService {
 	 * @param int id, int codePostal
 	 */
 	public void modifierCodePostalClient(int id, int codePostal) {
-		daoClient.modifierCodePostalClientParId(id, codePostal);
+		DAOClient.modifierCodePostalClientParId(id, codePostal);
 	}
 
 	/**
@@ -94,7 +97,7 @@ public class ServiceImplementationClient implements ClientService {
 	 * @param int id, String ville
 	 */
 	public void modifierVilleClient(int id, String ville) {
-		daoClient.modifierVilleClientParId(id, ville);
+		DAOClient.modifierVilleClientParId(id, ville);
 	}
 
 	/**
@@ -104,66 +107,7 @@ public class ServiceImplementationClient implements ClientService {
 	 * @param int id, String telephone
 	 */
 	public void modifierTelephoneClient(int id, String telephone) {
-		daoClient.modifierTelephoneClientParId(id, telephone);
-	}
-
-	/**
-	 * Méthode appelant la suppression d'un client dans la base de données clients.
-	 * La méthode affiche également les comptes et cartes bancaires associées au
-	 * client qui sont supprimées.
-	 * 
-	 * @param int id
-	 */
-	public void supprimerClient(int id) {
-		Client c = daoClient.afficherClientParId(id);
-
-		System.out.println("Le client " + c.getNom() + " a été supprimé");
-		System.out.println("Le compte courant numéro " + c.getCompteEpargne().getNumeroCompte() + "du client "
-				+ c.getNom() + " a bien été supprimé");
-
-		if (c.getCompteEpargne() != null) {
-			System.out.println("Le compte épargne numéro " + c.getCompteEpargne().getNumeroCompte() + "du client "
-					+ c.getNom() + " a bien été supprimé");
-		}
-
-		if (c.getCarteBancaire() != null) {
-			System.out.println("La carte bancaire numéro " + c.getCarteBancaire().getNumeroCarte() + "du client "
-					+ c.getNom() + " a bien été supprimé");
-		}
-		daoClient.supprimerClientParId(id);
-	}
-
-	/**
-	 * Méthode permettant d'associer un compte courant à un client.
-	 * 
-	 * @param CompteCourant compteCourant, Client c
-	 */
-	public void ajouterCompteCourant(CompteCourant compteCourant, Client c) {
-		if (c.getCompteCourant() != null) {
-			c.getCompteCourant().setNumeroCompte(genereNumeroCompte());
-		}
-	}
-
-	/**
-	 * Méthode permettant d'associer un compte epargne à un client.
-	 * 
-	 * @param CompteEpargne compteEpargne, Client c
-	 */
-	public void ajouterCompteEpargne(CompteEpargne compteEpargne, Client c) {
-		if (c.getCompteEpargne() != null) {
-			c.getCompteEpargne().setNumeroCompte(genereNumeroCompte());
-		}
-	}
-
-	/**
-	 * Méthode permettant d'associer une carte bancaire à un client.
-	 * 
-	 * @param CB cb, Client c
-	 */
-	public void ajouterCarteBancaire(CB cb, Client c) {
-		if (c.getCarteBancaire() != null) {
-			c.getCarteBancaire().setNumeroCarte(genereNumeroCarte());
-		}
+		DAOClient.modifierTelephoneClientParId(id, telephone);
 	}
 
 	/**

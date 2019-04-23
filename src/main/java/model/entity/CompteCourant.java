@@ -1,6 +1,8 @@
 package model.entity;
 
+
 import javax.persistence.Entity;
+
 
 /**
  * Classe CompteCourant caractérisée par une autorisation de découvert et qui
@@ -14,24 +16,27 @@ import javax.persistence.Entity;
 public class CompteCourant extends Compte {
 
 //	Attribut
-	private int AUTORISATIONDECOUVERT = 1000;
+	private int autorisationDecouvert = 1000;
 
 //	Constructeur
 	public CompteCourant(double solde, String dateOuverture) {
 		super(solde, dateOuverture);
 	}
 
+
 	public CompteCourant() {
 		super();
 	}
 
 	//	Getter et setter
-	public int getAUTORISATIONDECOUVERT() {
-		return AUTORISATIONDECOUVERT;
+
+	public int getAutorisationDecouvert() {
+		return autorisationDecouvert;
+
 	}
 
-	public void setAUTORISATIONDECOUVERT(int aUTORISATIONDECOUVERT) {
-		AUTORISATIONDECOUVERT = aUTORISATIONDECOUVERT;
+	public void setAutorisationDecouvert(int AutorisationDecouvert) {
+		autorisationDecouvert = AutorisationDecouvert;
 	}
 
 	@Override

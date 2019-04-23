@@ -7,6 +7,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 
+
 /**
  * Classe Conseiller caractérisée par une liste de clients et qui hérite de la
  * classe Employe.

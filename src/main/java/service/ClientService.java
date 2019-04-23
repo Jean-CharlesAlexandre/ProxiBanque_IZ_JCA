@@ -71,13 +71,6 @@ public interface ClientService {
 	public void modifierTelephoneClient(int id, String telephone);
 
 	/**
-	 * Méthode appelant la suppression d'un client dans la base de données clients.
-	 * 
-	 * @param int id
-	 */
-	public void supprimerClient(int id);
-
-	/**
 	 * Méthode permettant d'associer un compte epargne à un client.
 	 * 
 	 * @param CompteEpargne compteEpargne, Client c

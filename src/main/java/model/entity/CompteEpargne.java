@@ -1,7 +1,5 @@
 package model.entity;
 
-import model.Compte;
-
 /**
  * Classe CompteEpargne caractérisée par un taux de rémunération qui hérite de
  * la classe Compte.
@@ -12,7 +10,7 @@ import model.Compte;
 public class CompteEpargne extends Compte {
 
 //	Attribut
-	private int TAUXREMUNERATION = 3;
+	private int tauxRemuneration = 3;
 
 //	Constructeur
 	public CompteEpargne(double solde, String dateOuverture) {
@@ -21,11 +19,11 @@ public class CompteEpargne extends Compte {
 
 //	Getter et setter
 	public int getTAUXREMUNERATION() {
-		return TAUXREMUNERATION;
+		return tauxRemuneration;
 	}
 
-	public void setTAUXREMUNERATION(int tAUXREMUNERATION) {
-		TAUXREMUNERATION = tAUXREMUNERATION;
+	public void setTAUXREMUNERATION(int TauxRemuneration) {
+		tauxRemuneration = TauxRemuneration;
 	}
 
 	@Override

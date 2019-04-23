@@ -1,4 +1,4 @@
-package model;
+package model.entity;
 
 /**
  * Classe Compte caractérisée par un numéro de compte, un solde et une date
@@ -7,7 +7,7 @@ package model;
  * @author Jean-Charles & Jérémi
  *
  */
-public class Compte {
+public abstract class Compte {
 
 	// Attributs
 	private long numeroCompte;

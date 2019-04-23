@@ -1,7 +1,5 @@
 package model.entity;
 
-import model.Compte;
-
 /**
  * Classe CompteCourant caractérisée par une autorisation de découvert et qui
  * hérite de la classe Compte.
@@ -12,7 +10,7 @@ import model.Compte;
 public class CompteCourant extends Compte {
 
 //	Attribut
-	private int AUTORISATIONDECOUVERT = 1000;
+	private int autorisationDecouvert = 1000;
 
 //	Constructeur
 	public CompteCourant(double solde, String dateOuverture) {
@@ -20,12 +18,12 @@ public class CompteCourant extends Compte {
 	}
 
 //	Getter et setter
-	public int getAUTORISATIONDECOUVERT() {
-		return AUTORISATIONDECOUVERT;
+	public int getAutorisationDecouvert() {
+		return autorisationDecouvert;
 	}
 
-	public void setAUTORISATIONDECOUVERT(int aUTORISATIONDECOUVERT) {
-		AUTORISATIONDECOUVERT = aUTORISATIONDECOUVERT;
+	public void setAutorisationDecouvert(int AutorisationDecouvert) {
+		autorisationDecouvert = AutorisationDecouvert;
 	}
 
 	@Override

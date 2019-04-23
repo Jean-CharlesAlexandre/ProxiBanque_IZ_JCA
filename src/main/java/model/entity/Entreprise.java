@@ -1,7 +1,5 @@
 package model.entity;
 
-import model.Client;
-
 /**
  * Classe Entreprise caractérisée par numéro SIRET et qui hérite de la classe
  * Client.

@@ -1,7 +1,5 @@
 package model.entity;
 
-import model.Client;
-
 /**
  * Classe Particulier caractérisée par un prénom et qui hérite de la classe
  * Client.

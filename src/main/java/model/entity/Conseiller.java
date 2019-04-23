@@ -3,8 +3,6 @@ package model.entity;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.Client;
-
 /**
  * Classe Conseiller caractérisée par une liste de clients et qui hérite de la
  * classe Employe.

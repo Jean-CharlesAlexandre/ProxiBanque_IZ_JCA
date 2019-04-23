@@ -1,8 +1,4 @@
-package model;
-
-import model.entity.CB;
-import model.entity.CompteCourant;
-import model.entity.CompteEpargne;
+package model.entity;
 
 /**
  * Classe Client caractérisée par un id, un nom, une adresse, un code postal,

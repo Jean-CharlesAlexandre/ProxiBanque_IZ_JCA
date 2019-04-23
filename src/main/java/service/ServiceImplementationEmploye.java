@@ -1,15 +1,12 @@
 package service;
 
-import java.util.List;
-
 import model.Agence;
-import model.Client;
+import model.entity.Client;
 import model.entity.Conseiller;
 import model.entity.Employe;
 import model.entity.Entreprise;
 import model.entity.Particulier;
-import persistance.EmployeDAO;
-import persistance.EmployeMemoireDAO;
+import persistance.DAOEmploye;
 
 /**
  * Classe ServiceImplementationEmploye qui implémente l'interface
@@ -22,9 +19,7 @@ import persistance.EmployeMemoireDAO;
  * @author Jean-Charles & Jérémi
  *
  */
-public class ServiceImplementationEmploye implements EmployeService {
-
-	private EmployeDAO daoEmploye = new EmployeMemoireDAO();
+public class ServiceImplementationEmploye implements EmployeService, VirementService {
 
 	/**
 	 * Méthode appelant la sauvegarde d'un employé dans la base de données employés.
@@ -34,7 +29,7 @@ public class ServiceImplementationEmploye implements EmployeService {
 	@Override
 	public void ajouterEmploye(Employe e) {
 		if (e != null) {
-			daoEmploye.sauvegarderEmploye(e);
+			DAOEmploye.sauvegarderEmploye(e);
 		}
 	}
 
@@ -45,28 +40,7 @@ public class ServiceImplementationEmploye implements EmployeService {
 	 */
 	@Override
 	public Employe trouverEmploye(int id) {
-		return daoEmploye.afficherEmployeParId(id);
-	}
-
-	/**
-	 * Méthode appelant la demande de tous les employés dans la base de données
-	 * employés.
-	 * 
-	 */
-	@Override
-	public List<Employe> trouverToutEmploye() {
-		return daoEmploye.afficherTout();
-	}
-
-	/**
-	 * Méthode appelant la suppression d'un employé dans la base de données
-	 * employés.
-	 * 
-	 * @param int id
-	 */
-	@Override
-	public void supprimerEmploye(int id) {
-		daoEmploye.supprimerEmploye(id);
+		return DAOEmploye.afficherEmployeParId(id);
 	}
 
 	/**

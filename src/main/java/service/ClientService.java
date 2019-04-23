@@ -2,8 +2,8 @@ package service;
 
 import java.util.List;
 
-import model.Client;
 import model.entity.CB;
+import model.entity.Client;
 import model.entity.CompteCourant;
 import model.entity.CompteEpargne;
 
@@ -69,13 +69,6 @@ public interface ClientService {
 	 * @param int id, String telephone
 	 */
 	public void modifierTelephoneClient(int id, String telephone);
-
-	/**
-	 * Méthode appelant la suppression d'un client dans la base de données clients.
-	 * 
-	 * @param int id
-	 */
-	public void supprimerClient(int id);
 
 	/**
 	 * Méthode permettant d'associer un compte epargne à un client.

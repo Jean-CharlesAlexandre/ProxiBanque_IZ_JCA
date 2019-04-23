@@ -2,10 +2,10 @@ package service;
 
 import java.util.List;
 
-import model.CB;
 import model.Client;
-import model.CompteCourant;
-import model.CompteEpargne;
+import model.entity.CB;
+import model.entity.CompteCourant;
+import model.entity.CompteEpargne;
 
 /**
  * Interface ClientService est composée des règles métiers pour le client et

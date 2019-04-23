@@ -1,5 +1,9 @@
 package model;
 
+import model.entity.CB;
+import model.entity.CompteCourant;
+import model.entity.CompteEpargne;
+
 /**
  * Classe Client caractérisée par un id, un nom, une adresse, un code postal,
  * une ville, un téléphone. Il possède obligatiorement un compte courant et peut

@@ -1,5 +1,7 @@
 package model;
 
+import model.entity.Employe;
+
 /**
  * Classe Gerant et qui hérite de la classe Employe.
  * 
